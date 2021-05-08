@@ -9,7 +9,14 @@ public class PropertiesLoader {
 
     private static final PropertiesLoader INSTANCE = new PropertiesLoader();
 
+    private static String jsonName;
+
+    public static String getJsonName() {
+        return jsonName;
+    }
+
     private PropertiesLoader() {
+        jsonName = "";
         loadProperties();
     }
 
@@ -21,10 +28,10 @@ public class PropertiesLoader {
                     .getResourceAsStream("application.properties");
             if (inputStream != null) {
                 prop.load(inputStream);
+                jsonName = prop.getProperty("json.name");
             }
         } catch (IOException e) {
             // TODO: 18.04.2021
         }
-//        confirmationJwtSecret = prop.getProperty("confirmation.jwt.secret");
     }
 }
