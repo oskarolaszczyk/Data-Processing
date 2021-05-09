@@ -1,7 +1,5 @@
 package tech.problem_workshop.data_processing.dao;
 
-import tech.problem_workshop.data_processing.model.Story;
-
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
