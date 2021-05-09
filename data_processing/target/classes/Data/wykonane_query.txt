@@ -1,4 +1,0 @@
-SELECT title, url, text, b.by as author_name, score, time, timestamp, id, descendants
-    FROM `bigquery-public-data.hacker_news.full` b
-    where title is not null or text is not null and type = 'story' and score is not null
-    ORDER BY score DESC
