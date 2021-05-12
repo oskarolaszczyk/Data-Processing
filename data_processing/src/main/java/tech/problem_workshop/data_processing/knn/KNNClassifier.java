@@ -35,10 +35,11 @@ public class KNNClassifier {
     private Map<Story, Double> calculateDistances() {
         Map<Story, Double> mapOfAnything = new HashMap<>();
 
-        this.trainingStories.forEach(s -> mapOfAnything.put(s, metric.calculateDistance(new double[]{0},
-                new double[]{1 - Bigrams.bigramSimilarity(new StringBuilder().
-                append(story.getTitleAfterStem()).toString(), new StringBuilder().
-                append(s.getTitleAfterStem()).toString())})));
+        this.trainingStories.forEach(s -> mapOfAnything.put(s, metric.calculateDistance(new double[]{0,0},
+                new double[]{1 - Bigrams.bigramSimilarity(String.join(" ", story.getTitleAfterStem()),
+                        String.join(" ", s.getTitleAfterStem())), 1 - Bigrams.bigramSimilarity(String.join(" ", story.getTextAfterStem()),
+                        String.join(" ", s.getTextAfterStem()))})));
+
 
         return mapOfAnything;
     }

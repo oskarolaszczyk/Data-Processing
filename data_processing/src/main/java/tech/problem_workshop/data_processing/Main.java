@@ -17,7 +17,7 @@ public class Main {
         var y = 1;
 
         Story toTrain = x.get(0);
-        KNNClassifier knn = new KNNClassifier(3, x.subList(1, x.size()-1), new EuclideanMetric());
+        KNNClassifier knn = new KNNClassifier(10, x.subList(1, x.size()-1), new EuclideanMetric());
         knn.simulate(toTrain);
     }
 }
