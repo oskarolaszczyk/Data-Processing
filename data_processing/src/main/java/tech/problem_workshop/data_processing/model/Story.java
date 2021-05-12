@@ -19,6 +19,22 @@ public class Story {
     public Story() {
     }
 
+    public String[] getTitleAfterStem() {
+        return titleAfterStem;
+    }
+
+    public void setTitleAfterStem(String[] titleAfterStem) {
+        this.titleAfterStem = titleAfterStem;
+    }
+
+    public String[] getTextAfterStem() {
+        return textAfterStem;
+    }
+
+    public void setTextAfterStem(String[] textAfterStem) {
+        this.textAfterStem = textAfterStem;
+    }
+
     public Story(String[] title, String[] titleAfterStem, String URL, String author_name, Integer score, Long time, Timestamp timestamp, Long id, Integer commentsCount, String[] text, String[] textAfterStem) {
         this.title = title;
         this.URL = URL;
