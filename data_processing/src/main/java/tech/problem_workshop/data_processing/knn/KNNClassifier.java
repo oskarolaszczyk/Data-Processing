@@ -1,9 +1,12 @@
 package tech.problem_workshop.data_processing.knn;
 
 import tech.problem_workshop.data_processing.knn.metric.Metric;
+import tech.problem_workshop.data_processing.knn.text_distance.Bigrams;
 import tech.problem_workshop.data_processing.model.Story;
 
-import java.util.List;
+import java.util.*;
+import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 public class KNNClassifier {
 
@@ -20,13 +23,34 @@ public class KNNClassifier {
 
     public void simulate(Story story) {
         this.story = story;
-        this.calculateDistances();
-
+        Map<Story, Double> neighbours = findKNearestNeighbours(sortMapWithDoubles(this.calculateDistances()));
+        int j = 0;
     }
 
-    private void calculateDistances() {
-        for (Story trainingStory: this.trainingStories) {
+    private Map<Story, Double> findKNearestNeighbours(Map<Story, Double> sortedMap) {
+        return sortedMap.entrySet().stream().limit(this.k)
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+    }
 
-        }
+    private Map<Story, Double> calculateDistances() {
+        Map<Story, Double> mapOfAnything = new HashMap<>();
+
+        this.trainingStories.forEach(s -> mapOfAnything.put(s, metric.calculateDistance(new double[]{0},
+                new double[]{1 - Bigrams.bigramSimilarity(new StringBuilder().
+                append(story.getTitleAfterStem()).toString(), new StringBuilder().
+                append(s.getTitleAfterStem()).toString())})));
+
+        return mapOfAnything;
+    }
+
+    public Map<Story, Double> sortMapWithDoubles(Map<Story, Double> mapToSort) {
+        Map<Story, Double> collect = mapToSort.entrySet()
+                .stream()
+                .sorted(Map.Entry.comparingByValue())
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        (oldValue, newValue) -> oldValue, LinkedHashMap::new));
+        return collect;
     }
 }
