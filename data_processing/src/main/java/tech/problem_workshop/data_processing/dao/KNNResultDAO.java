@@ -14,9 +14,9 @@ public class KNNResultDAO implements SaveDAO<KNNResult> {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
 
         for (KNNResult result : knnResults) {
-            bw.write(String.join(" ", result.getStoryTitle()));
+            bw.write(String.join(" ", result.getStoryTitle()).replace("\n", " "));
             bw.newLine();
-            bw.write(String.join(" ", result.getStoryText()));
+            bw.write(String.join(" ", result.getStoryText()).replace("\n", " "));
             bw.newLine();
             bw.write(result.getStoryScore().toString());
             bw.newLine();

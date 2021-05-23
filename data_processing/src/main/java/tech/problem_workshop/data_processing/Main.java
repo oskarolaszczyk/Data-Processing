@@ -9,6 +9,7 @@ import tech.problem_workshop.data_processing.model.Story;
 import tech.problem_workshop.data_processing.utils.PropertiesLoader;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.function.Predicate;
 
 public class Main {
@@ -25,16 +26,14 @@ public class Main {
         // Potrzebne do debugowania i podejrzenia co jest wewnątrz
         var y = 1;
 
+        Collections.shuffle(x);
         //przykladowo dla 3 postow:
         Story toTrain = x.get(0);
-        Story toTrain1 = x.get(1);
-        Story toTrain2 = x.get(2);
         KNNClassifier knn = new KNNClassifier(10, x.subList(1, x.size()-1), new EuclideanMetric());
         knn.simulate(toTrain);
-        knn.simulate(toTrain1);
-        knn.simulate(toTrain2);
+
 
         KNNResultDAO knnResultDAO = new KNNResultDAO();
-        knnResultDAO.save("xd.txt", knn.getKnnResultsToStoreInFile());
+        knnResultDAO.save("result.txt", knn.getKnnResultsToStoreInFile());
     }
 }
