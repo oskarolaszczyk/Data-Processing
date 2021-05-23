@@ -1,0 +1,17 @@
+Ask HN Im a software engineer going blind how should I prepare
+Ix27m a 24 yx2Fo full stack engineer I know some of you are rolling your eyes right now just highlighting that I have experience on frontend apps as well as backend architecture Ix27ve been working professionally for 7 years building mostly javascript projects but also some PHP Two years ago I was diagnosed with a condition called quotUsherx27s Syndromequot - characterized by hearing loss balance issues and progressive vision losspI know there are blind software engineers out there My main questions arep- Are there blind frontend engineersp- What kinds of software engineering lend themselves to someone with limited vision Backend onlyp- Besides a screen reader what are some of the best tools for building software with limited visionp- Does your company employ blind engineers How well does it work What kind of engineer are theypIx27m really trying to get ahead of this thing and prepare myself as my vision is degrading rather quickly Ix27m not sure what I can do if I canx27t do SE as I donx27t have any formal education in anything Ix27ve worked really hard to get to where I am and donx27t want it to go to wastepThank you for any input and stay safe out therepEditpThank you all for your links suggestions and moral support I really appreciate it Since my diagnosis Ix27ve slowly developed a crippling anxiety centered around a feeling that I need to figure out the rest of my life before itx27s too late I know I shouldnx27t think this way but it is hard not to Ix27m very independent and I feel a pressure to quotshow upquot I will look into these opportunities mentioned and try to get in touch with some more members of the blind engineering community
+3270
+39.1
+[5, 2, 38, 1, 1, 3, 2, 320, 1, 18]
+Ask HN Am I the longest-serving programmer – 57 years and counting
+In May of 1963 I started my first full-time job as a computer programmer for Mitchell Engineering Company a supplier of steel buildings At Mitchell I developed programs in Fortran II on an IBM 1620 mostly to improve the efficiency of order processing and fulfillment Since then all my jobs for the past 57 years have involved computer programming I am now a data scientist developing cloud-based big data fraud detection algorithms using machine learning and other advanced analytical technologies Along the way I earned a Master’s in Operations Research and a Master’s in Management Science studied artificial intelligence for 3 years in a PhD program for engineering and just two years ago I received Graduate Certificates in Big Data Analytics from the schools of business and computer science at a local university FAU In addition I currently hold the designation of Certified Analytics Professional CAP At 74 I still have no plans to retire or to stop programming
+2634
+283.5
+[2, 2634, 2, 1, 55, 47, 20, 8, 1, 65]
+Ask HN Is S3 down
+Ix27m gettingp
+ quoterrorCodequot quotInternalErrorquot
+pWhen I attempt to use the AWS Console to view s3
+2589
+266.6
+[38, 2589, 15, 4, 9, 1, 4, 2, 3, 1]

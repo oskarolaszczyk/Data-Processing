@@ -1,5 +1,6 @@
 package tech.problem_workshop.data_processing;
 
+import tech.problem_workshop.data_processing.dao.KNNResultDAO;
 import tech.problem_workshop.data_processing.dao.ResourcesStoryDao;
 import tech.problem_workshop.data_processing.dao.StoryDAO;
 import tech.problem_workshop.data_processing.knn.KNNClassifier;
@@ -24,8 +25,16 @@ public class Main {
         // Potrzebne do debugowania i podejrzenia co jest wewnątrz
         var y = 1;
 
+        //przykladowo dla 3 postow:
         Story toTrain = x.get(0);
+        Story toTrain1 = x.get(1);
+        Story toTrain2 = x.get(2);
         KNNClassifier knn = new KNNClassifier(10, x.subList(1, x.size()-1), new EuclideanMetric());
         knn.simulate(toTrain);
+        knn.simulate(toTrain1);
+        knn.simulate(toTrain2);
+
+        KNNResultDAO knnResultDAO = new KNNResultDAO();
+        knnResultDAO.save("xd.txt", knn.getKnnResultsToStoreInFile());
     }
 }

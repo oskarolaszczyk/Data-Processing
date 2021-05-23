@@ -23,10 +23,6 @@ public class KNNClassifier {
         knnResultsToStoreInFile = new ArrayList<>();
     }
 
-    public List<KNNResult> getKnnResultsToStoreInFile() {
-        return knnResultsToStoreInFile;
-    }
-
     public void simulate(Story story) {
         this.story = story;
         Map<Story, Double> neighbours = findKNearestNeighbours(sortMapWithDoubles(this.calculateDistances()));
