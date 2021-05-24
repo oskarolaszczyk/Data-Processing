@@ -6,19 +6,18 @@ import java.util.HashMap;
 import java.util.List;
 
 public class StoriesMappedByHourOfTheWeek {
-    private final HashMap<Story, Integer> mappedStories;
-    private final List<Story> stories;
+    private  HashMap<Story, Integer> mappedStories;
 
     public StoriesMappedByHourOfTheWeek(List<Story> stories) {
-        this.stories = stories;
-        this.mappedStories = mapStories();
+        this.mappedStories = mapStories(stories);
     }
 
-    private HashMap<Story, Integer> mapStories() {
-        for (Story story : this.stories) {
-            this.mappedStories.put(story, story.getHourOfTheWeek());
+    public HashMap<Story, Integer> mapStories(List<Story> stories) {
+        HashMap<Story, Integer> buffer = new HashMap<>();
+        for (Story story : stories) {
+            buffer.put(story, story.getHourOfTheWeek());
         }
-        return this.mappedStories;
+        return buffer;
     }
 
     public HashMap<Story, Integer> getMappedStories() {
