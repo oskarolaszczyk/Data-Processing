@@ -1,7 +1,5 @@
 package tech.problem_workshop.data_processing.dao;
 
-import tech.problem_workshop.data_processing.model.KNNResult;
-
 import java.io.IOException;
 import java.util.List;
 

@@ -1,6 +1,7 @@
 package tech.problem_workshop.data_processing;
 
-import tech.problem_workshop.data_processing.dao.KNNResultDAO;
+import tech.problem_workshop.data_processing.dao.KNNCommentsResultDAO;
+import tech.problem_workshop.data_processing.dao.KNNScoreResultDAO;
 import tech.problem_workshop.data_processing.dao.ResourcesStoryDao;
 import tech.problem_workshop.data_processing.dao.StoryDAO;
 import tech.problem_workshop.data_processing.knn.KNNClassifier;
@@ -33,7 +34,11 @@ public class Main {
         knn.simulate(toTrain);
 
 
-        KNNResultDAO knnResultDAO = new KNNResultDAO();
-        knnResultDAO.save("result.txt", knn.getKnnResultsToStoreInFile());
+        KNNScoreResultDAO knnScoreResultDAO = new KNNScoreResultDAO();
+        knnScoreResultDAO.save("result.txt", knn.getKnnScoreResultsToStoreInFile());
+
+
+        KNNCommentsResultDAO knnCommentsResultDAO = new KNNCommentsResultDAO();
+        knnCommentsResultDAO.save("result.txt", knn.getKnnCommentsResultsToStoreInFile());
     }
 }

@@ -4,15 +4,15 @@ import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
-public class KNNResult implements Serializable {
+public class KNNScoreResult implements Serializable {
     private String[] storyTitle;
     private String[] storyText;
     private Integer storyScore;
     private Double avgNeighboursScore;
     private List<Integer> neighboursScores;
 
-    public KNNResult(String[] storyTitle, String[] storyText, Integer storyScore,
-                     List<Integer> neighboursScores) {
+    public KNNScoreResult(String[] storyTitle, String[] storyText, Integer storyScore,
+                          List<Integer> neighboursScores) {
         this.storyTitle = storyTitle;
         this.storyText = storyText;
         this.storyScore = storyScore;
