@@ -17,7 +17,8 @@
         </developer>
         <developer>
             <name>Oskar Olaszczyk</name>
-            <id>TODO</id>
+            <id>224389</id>
+            <email>224389@edu.p.lodz.pl</email>
         </developer>
         <developer>
             <name>Przemysław Zdrzalik</name>
@@ -138,6 +139,41 @@
                 <artifactId>maven-site-plugin</artifactId>
                 <version>3.8.2</version>
             </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <executions>
+                    <execution>
+                        <id>default-cli</id>
+                        <configuration>
+                            <mainClass>tech.problem_workshop.data_processing.Main</mainClass>
+                            <arguments>
+                                <argument>-Xmx10G</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>similar-story</id>
+                        <configuration>
+                            <mainClass>tech.problem_workshop.data_processing.Main</mainClass>
+                            <arguments>
+                                <argument>-Xmx10G</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>best-time-to-post</id>
+                        <configuration>
+                            <mainClass>tech.problem_workshop.data_processing.HourOfTheWeekAnalysisMain</mainClass>
+                            <arguments>
+                                <argument>-Xmx10G</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
+
     </build>
 </project>
