@@ -2,10 +2,11 @@ package tech.problem_workshop.data_processing.knn;
 
 import tech.problem_workshop.data_processing.knn.metric.Metric;
 import tech.problem_workshop.data_processing.knn.text_distance.Bigrams;
+import tech.problem_workshop.data_processing.model.KNNCommentsResult;
+import tech.problem_workshop.data_processing.model.KNNScoreResult;
 import tech.problem_workshop.data_processing.model.Story;
 
 import java.util.*;
-import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 public class KNNClassifier {
@@ -14,17 +15,42 @@ public class KNNClassifier {
     private Story story;
     private final List<Story> trainingStories;
     private final Metric metric;
+    private List<KNNScoreResult> knnScoreResultsToStoreInFile;
+    private List<KNNCommentsResult> knnCommentsResultsToStoreInFile;
 
     public KNNClassifier(int k, List<Story> trainingStories, Metric metric) {
         this.k = k;
         this.trainingStories = trainingStories;
         this.metric = metric;
+        knnScoreResultsToStoreInFile = new ArrayList<>();
+        knnCommentsResultsToStoreInFile = new ArrayList<>();
+    }
+
+    public List<KNNScoreResult> getKnnScoreResultsToStoreInFile() {
+        return knnScoreResultsToStoreInFile;
+    }
+
+    public List<KNNCommentsResult> getKnnCommentsResultsToStoreInFile() {
+        return knnCommentsResultsToStoreInFile;
     }
 
     public void simulate(Story story) {
         this.story = story;
         Map<Story, Double> neighbours = findKNearestNeighbours(sortMapWithDoubles(this.calculateDistances()));
+        List<Integer> neighboursScores = new ArrayList<>();
+        for (Story neighbour : neighbours.keySet()) {
+            neighboursScores.add(neighbour.getScore());
+        }
+        List<Integer> neighboursCommentsCounts = new ArrayList<>();
+        for (Story neighbour : neighbours.keySet()) {
+            neighboursCommentsCounts.add(neighbour.getCommentsCount());
+        }
         int j = 0;
+
+        knnScoreResultsToStoreInFile.add(new KNNScoreResult(story.getTitle(), story.getText(),
+                story.getScore(), neighboursScores));
+        knnCommentsResultsToStoreInFile.add(new KNNCommentsResult(story.getTitle(), story.getText(),
+                story.getCommentsCount(), neighboursCommentsCounts));
     }
 
     private Map<Story, Double> findKNearestNeighbours(Map<Story, Double> sortedMap) {
