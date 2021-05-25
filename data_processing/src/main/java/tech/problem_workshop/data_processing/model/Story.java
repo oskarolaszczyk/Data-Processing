@@ -1,7 +1,9 @@
 package tech.problem_workshop.data_processing.model;
 
 
+import java.sql.Time;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 public class Story {
     private String[] title;
@@ -15,6 +17,7 @@ public class Story {
     private Integer commentsCount;
     private String[] text;
     private String[] textAfterStem;
+    private int hourOfTheWeek;
 
     public Story() {
     }
@@ -47,8 +50,13 @@ public class Story {
         this.text = text;
         this.titleAfterStem = titleAfterStem;
         this.textAfterStem = textAfterStem;
+        this.hourOfTheWeek = timestampToHourOfTheWeek(timestamp);
     }
 
+    private int timestampToHourOfTheWeek(Timestamp timestamp) {
+        LocalDateTime dateTime = timestamp.toLocalDateTime();
+        return (dateTime.getHour()) + ((dateTime.getDayOfWeek().getValue() - 1) * 24);
+    }
     public String[] getTitle() {
         return title;
     }
@@ -95,6 +103,7 @@ public class Story {
 
     public void setTimestamp(Timestamp timestamp) {
         this.timestamp = timestamp;
+        this.hourOfTheWeek = timestampToHourOfTheWeek(timestamp);
     }
 
     public Long getId() {
@@ -120,4 +129,6 @@ public class Story {
     public void setText(String[] text) {
         this.text = text;
     }
+
+    public int getHourOfTheWeek() { return hourOfTheWeek; }
 }
