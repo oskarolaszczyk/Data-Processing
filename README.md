@@ -106,7 +106,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Organization - [@Problem-Workshop](https://github.com/Problem-Workshop) <br/>
 
-###Contributors
+### Contributors
 Oskar Olaszczyk - [@oskarolaszczyk](https://github.com/oskarolaszczyk) <br/>
 Julia Szymańska - [@JuliaSzymanska](https://github.com/JuliaSzymanska) <br/>
 Przemysław Zdrzalik - [@ZdrzalikPrzemyslaw](https://github.com/ZdrzalikPrzemyslaw) <br/>
