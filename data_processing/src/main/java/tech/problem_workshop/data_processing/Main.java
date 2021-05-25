@@ -20,25 +20,28 @@ public class Main {
         x.removeIf(new Predicate<Story>() {
             @Override
             public boolean test(Story story) {
-                return story.getTextAfterStem().length == 0 ;
+                return story == null || story.getTextAfterStem().length == 0 || story.getCommentsCount() == null ||
+                        story.getCommentsCount() == -1;
+
             }
         });
 
         // Potrzebne do debugowania i podejrzenia co jest wewnątrz
         var y = 1;
 
-        Collections.shuffle(x);
-        //przykladowo dla 3 postow:
-        Story toTrain = x.get(0);
-        KNNClassifier knn = new KNNClassifier(10, x.subList(1, x.size()-1), new EuclideanMetric());
-        knn.simulate(toTrain);
 
+        for (int i = 1; i <= 3; i++) {
+            Collections.shuffle(x);
+            Story toTrain = x.get(0);
+            KNNClassifier knn = new KNNClassifier(10, x.subList(1, x.size()-1), new EuclideanMetric());
+            knn.simulate(toTrain);
 
-        KNNScoreResultDAO knnScoreResultDAO = new KNNScoreResultDAO();
-        knnScoreResultDAO.save("result.txt", knn.getKnnScoreResultsToStoreInFile());
+            KNNScoreResultDAO knnScoreResultDAO = new KNNScoreResultDAO();
+            knnScoreResultDAO.save("results/knn/scores/score" + i + ".txt", knn.getKnnScoreResultsToStoreInFile());
 
+            KNNCommentsResultDAO knnCommentsResultDAO = new KNNCommentsResultDAO();
+            knnCommentsResultDAO.save("results/knn/comments/comment" + i + ".txt", knn.getKnnCommentsResultsToStoreInFile());
+        }
 
-        KNNCommentsResultDAO knnCommentsResultDAO = new KNNCommentsResultDAO();
-        knnCommentsResultDAO.save("result.txt", knn.getKnnCommentsResultsToStoreInFile());
     }
 }
