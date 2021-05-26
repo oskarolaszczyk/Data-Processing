@@ -10,7 +10,7 @@ public class KNNCommentsResultDAO implements SaveDAO<KNNCommentsResult> {
     @Override
     public void save(String path, List<KNNCommentsResult> knnCommentsResults) throws IOException {
         File fout = new File(path);
-        FileOutputStream fos = new FileOutputStream(fout,true);
+        FileOutputStream fos = new FileOutputStream(fout);
 
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
 

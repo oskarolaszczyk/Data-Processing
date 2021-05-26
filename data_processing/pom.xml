@@ -32,18 +32,18 @@
         </developer>
         <developer>
             <name>Hubert Gawłowski</name>
-            <id>TODO</id>
-            <email>TODO</email>
+            <id>224298</id>
+            <email>224298@edu.p.lodz.pl</email>
         </developer>
         <developer>
             <name>Szymon Jacoń</name>
-            <id>TODO</id>
-            <email>TODO</email>
+            <id>224306</id>
+            <email>224306@edu.p.lodz.pl</email>
         </developer>
         <developer>
             <name>Michał Majchrowski</name>
-            <id>TODO</id>
-            <email>TODO</email>
+            <id>224364</id>
+            <email>224364@edu.p.lodz.pl</email>
         </developer>
         <developer>
             <name>Kamil Kiszko-Zgierski</name>
@@ -154,7 +154,7 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <id>similar-story</id>
+                        <id>similar-stories</id>
                         <configuration>
                             <mainClass>tech.problem_workshop.data_processing.Main</mainClass>
                             <arguments>
