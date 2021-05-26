@@ -17,11 +17,12 @@ public class HourOfTheWeekAnalysisMain {
         List<Story> x = storyDAO.getAll("Data/" + PropertiesLoader.getJsonName());
         StoriesMappedByHourOfTheWeek mappedStories = new StoriesMappedByHourOfTheWeek(x);
         AverageOfMappedStories average = new AverageOfMappedStories(mappedStories);
-        String path = HourOfTheWeekAnalysisMain.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+//        String path = HourOfTheWeekAnalysisMain.class.getProtectionDomain().getCodeSource().getLocation().getPath();
         //"../../src/main/resources/Data/readableAverage.txt" Another option
-        TxtAnalysisFileGenerator.writeReadable(average,path + "Data/readableAverage.txt");
-       TxtAnalysisFileGenerator.writeReadableSelected(average,path + "Data/readableTopStoriesAverage.txt",20);
+        String path = "data_processing/src/main/resources/";
+        TxtAnalysisFileGenerator.writeReadable(average, path + "Data/readableAverage.txt");
+        TxtAnalysisFileGenerator.writeReadableSelected(average, path + "Data/readableTopStoriesAverage.txt", 20);
         TxtAnalysisFileGenerator.writeTotalAverage(average, path + "Data/jsonAverage.json");
-        TxtAnalysisFileGenerator.writeSelectedAverage(average,20, path + "Data/jsonTopStoriesAverage.json");
+        TxtAnalysisFileGenerator.writeSelectedAverage(average, 20, path + "Data/jsonTopStoriesAverage.json");
     }
 }
