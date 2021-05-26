@@ -1,3 +1,4 @@
 target/
 results/knn/comments/*
 results/knn/scores/*
+!.gitkeep
