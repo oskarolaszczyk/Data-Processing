@@ -1,4 +1,5 @@
 target/
 results/knn/comments/*
 results/knn/scores/*
+results/best-time/*
 !.gitkeep
