@@ -53,15 +53,15 @@ Using this data we will try to answer next questions:
    ```
 2. Maven clean and install
    ```sh
-   mvn clean install
+   _JAVA_OPTIONS="-Xmx10G" mvn clean install
    ```
 3. Run "similar stories" main class
    ```sh
-   mvn exec:java@similar-stories
+   _JAVA_OPTIONS="-Xmx10G" mvn exec:java@similar-stories
    ```
 4. Run "best time to post" main class
     ```JS
-    mvn exec:java@best-time-to-post
+    _JAVA_OPTIONS="-Xmx10G" mvn exec:java@best-time-to-post
     ```
 
 ### Plot results
