@@ -154,7 +154,7 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <id>similar-story</id>
+                        <id>similar-stories</id>
                         <configuration>
                             <mainClass>tech.problem_workshop.data_processing.Main</mainClass>
                             <arguments>
