@@ -54,11 +54,11 @@ Using this data we will try to answer next questions:
    ```
 2. Plot "similar stories" results
    ```sh
-   python plot_similar_stories
+   python similar_stories
    ```
 3. Plot "best time to post" results
    ```sh
-   python plot_best_time_to_post
+   python best_time_to_post
    ```
 
 ## Software organization into modules/packages/classes
@@ -71,9 +71,12 @@ Using this data we will try to answer next questions:
 
 <!-- USAGE EXAMPLES -->
 ## Usage
+![Image 1](data_processing/results/knn/score.jpg)
+![Image 2](data_processing/results/knn/comments.jpg)
+![Image 3](data_processing/results/best-time/Average.png)
+![Image 4](data_processing/results/best-time/TopStoriesAverage.png)
 
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+_For more examples, please refer to the [Documentation](https://docs.google.com/document/d/1UFls-4eaG2nJ6IP4VzNljtvK4HCIsFnN51XXb1WRsVE/edit?usp=sharing)_
 
 
 <!-- LICENSE -->
