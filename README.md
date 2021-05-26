@@ -6,7 +6,7 @@
 
 ![Hacker News](https://upload.wikimedia.org/wikipedia/commons/a/ac/Hacker_News.png) 
 
-Dataset is described in this [section](https://example.com)
+Dataset is described in this [section](https://github.com/Problem-Workshop/Data-Processing/tree/master/data_processing/src/main/resources/Data)
 
 Using this data we will try to answer next questions:
 * When is the best time to post stories?
