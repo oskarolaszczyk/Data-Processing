@@ -25,10 +25,9 @@ def generate_plot(json_file_path, out_file_name, ylim=(9, 14)):
 
 
 if __name__ == '__main__':
-    json_catalog = "../data_processing/src/main/resources/Data/"
-    results_catalog = "../data_processing/results/best-time/"
+    catalog = "../data_processing/results/best-time/"
 
-    generate_plot(json_catalog + "jsonAverage.json",
-                  results_catalog + "Average.png")
-    generate_plot(json_catalog + "jsonTopStoriesAverage.json",
-                  results_catalog + "TopStoriesAverage.png", ylim=(500, 1500))
+    generate_plot(catalog + "jsonAverage.json",
+                  catalog + "Average.png")
+    generate_plot(catalog + "jsonTopStoriesAverage.json",
+                  catalog + "TopStoriesAverage.png", ylim=(500, 1500))
